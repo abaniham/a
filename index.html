@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Qraphql</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+  <body>
+    <section id="login-view" class="login-card">
+      <div class="card-content">
+        <h2><i class="fas fa-sign-in-alt"></i> Welcome Back</h2>
+        <p class="subtitle">Please login to access your profile</p>
+        <form id="login-form" class="login-form">
+          <div class="input-group">
+            <label for="identifier"><i class="fas fa-user"></i> Username or Email</label>
+            <input
+              type="text"
+              id="identifier"
+              placeholder="Enter your username or email"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="password"><i class="fas fa-lock"></i> Password</label>
+            <input 
+              type="password" 
+              id="password" 
+              placeholder="Enter your password" 
+              required 
+            />
+          </div>
+          <button type="submit" class="login-btn"><i class="fas fa-arrow-right"></i> Login</button>
+        </form>
+        <p id="error" class="error-msg"></p>
+      </div>
+    </section>
+
+    <section id="profile-view" style="display: none">
+      <div class="profile-container">
+        <div class="profile-card">
+          <div class="avatar" id="avatar"></div>
+          <div class="profile-info">
+            <h2 id="profile-title"></h2>
+            <div class="meta">
+              <span class="username" id="username"></span>
+              <span class="user-id" id="user-id"></span>
+              <span class="user-email" id="user-email"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Organized section for XP summary and project stats -->
+        <div class="xp-summary">
+          <h3>XP & Projects Summary</h3>
+          <div class="summary-grid">
+            <p id="total-xp" class="summary-item">Total XP: Loading...</p>
+            <p id="pass-count" class="summary-item">Passed Projects: Loading...</p>
+            <p id="fail-count" class="summary-item">Failed Projects: Loading...</p>
+          </div>
+          
+          <h4>Last 5 Projects Worked On</h4>
+          <div id="projects-list" class="projects-list">
+            <!-- Last 5 projects will be listed here -->
+          </div>
+        </div>
+      </div>
+
+      <div id="graphs">
+        <div id="xp-graph" class="graph-box" aria-label="XP graph"></div>
+        <div id="ratio-graph" class="graph-box" aria-label="Pass/Fail ratio"></div>
+      </div>
+
+      <button id="logout-btn" class="logout-btn">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+    </section>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
